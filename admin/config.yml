@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: operlead/operlead-site
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "blog/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Data de Publicação", name: "date", widget: "datetime"}
+      - {label: "Imagem de Capa", name: "thumbnail", widget: "image", required: false}
+      - {label: "Resumo", name: "summary", widget: "text"}
+      - {label: "Conteúdo", name: "body", widget: "markdown"}
